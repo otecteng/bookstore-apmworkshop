@@ -1,4 +1,4 @@
 rootProject.name = 'bookstore'
-include ':productpage'
-include ':order'
-
+include 'productpage'
+include 'order'
+include 'delivery'

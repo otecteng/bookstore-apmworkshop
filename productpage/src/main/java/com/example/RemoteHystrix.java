@@ -9,8 +9,4 @@ public class RemoteHystrix implements OrderFeignClient {
         return null;
     }
 
-    @Override
-    public String hi() {
-        return null;
-    }
 }
