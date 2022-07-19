@@ -6,6 +6,14 @@ jar.enabled=true
 group 'com.example'
 version 'unspecified'
 
+jar {
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'com.example.OrderApplication'
+        )
+    }
+}
 repositories {
     mavenCentral()
 }
