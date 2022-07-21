@@ -16,11 +16,11 @@ public class MQConfig {
 
     @Bean
     public TopicExchange orderExchange() {
-        return new TopicExchange("order");
+        return new TopicExchange("default");
     }
 
     @Bean
     Binding binding() {
-        return BindingBuilder.bind(delivery()).to(orderExchange()).with("delivery.*");
+        return BindingBuilder.bind(delivery()).to(orderExchange()).with("order");
     }
 }

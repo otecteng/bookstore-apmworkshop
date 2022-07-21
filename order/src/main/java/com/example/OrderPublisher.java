@@ -14,7 +14,7 @@ public class OrderPublisher {
     public boolean publish(OrderDTO order){
         ObjectMapper mapper = new ObjectMapper();
         try {
-            amqpTemplate.convertAndSend("order", "delivery.*", mapper.writeValueAsString(order));
+            amqpTemplate.convertAndSend("default", "order", mapper.writeValueAsString(order));
         } catch (JsonProcessingException e) {
             e.printStackTrace();
             return false;
